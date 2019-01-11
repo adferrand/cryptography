@@ -426,6 +426,20 @@ Interfaces
         :raises ValueError: If ``response_status`` is not
             :class:`~cryptography.x509.ocsp.OCSPResponseStatus.SUCCESSFUL`.
 
+    .. attribute:: signature_hash_algorithm
+
+        :type: :class:`~cryptography.hazmat.primitives.hashes.HashAlgorithm`
+
+        Returns the
+        :class:`~cryptography.hazmat.primitives.hashes.HashAlgorithm` which
+        was used in signing this response.
+
+        .. doctest::
+
+            >>> from cryptography.hazmat.primitives import hashes
+            >>> isinstance(response.signature_hash_algorithm, hashes.SHA1)
+            True
+
     .. attribute:: signature
 
         :type: bytes
